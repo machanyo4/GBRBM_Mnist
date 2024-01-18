@@ -75,7 +75,7 @@ optimizer = optim.SGD(rbm.parameters(), lr=0.01)
 
 # 学習
 losses = []
-num_epochs = 10
+num_epochs = 5
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # accuracyの値を格納するためのリスト
@@ -87,6 +87,7 @@ for epoch in range(num_epochs):
     epoch_losses = []
 
     # tqdm を使用してプログレスバー表示
+    train_epoch_accuracies = []
     for data in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}', leave=False):
         data = data.view(data.size(0), -1).to(device)  # データの平滑化
         v0 = data
@@ -104,20 +105,26 @@ for epoch in range(num_epochs):
         negative_phase = torch.matmul(vk.t(), pvk)
         loss = criterion(positive_phase - negative_phase, torch.zeros_like(positive_phase))
         # トレーニングデータのaccを計算
-        train_predictions = torch.argmax(rbm(data)[:, 28*28:], dim=1)  # 後半の10要素を取得
+        train_predictions = torch.argmax(rbm.backward(rbm(data))[:, 28*28:], dim=1)  # 後半の10要素を取得
         train_ground_truth = torch.argmax(data[:, 28*28:], dim=1)
+        # print(f'test {train_ground_truth.cpu().numpy()}')
+        # print(f'prediction {train_predictions.cpu().numpy()}')
         train_accuracy = accuracy_score(train_ground_truth.cpu().numpy(), train_predictions.cpu().numpy())
-        train_accuracies.append(train_accuracy)
+        train_epoch_accuracies.append(train_accuracy)
 
         loss.backward()
         optimizer.step()
         epoch_losses.append(loss.item())
+    
+    # Trainデータの平均正確さを計算
+    train_avg_accuracy = np.mean(train_epoch_accuracies)
+    train_accuracies.append(train_avg_accuracy)
 
     # テストデータの正確さを計算
     test_epoch_accuracies = []
     for data in tqdm(test_loader, desc=f'Testing Epoch {epoch+1}/{num_epochs}', leave=False):
         data = data.view(data.size(0), -1).to(device)
-        test_predictions = torch.argmax(rbm(data)[:, 28*28:], dim=1)
+        test_predictions = torch.argmax(rbm.backward(rbm(data))[:, 28*28:], dim=1)
         test_ground_truth = torch.argmax(data[:, 28*28:], dim=1)
         test_accuracy = accuracy_score(test_ground_truth.cpu().numpy(), test_predictions.cpu().numpy())
         test_epoch_accuracies.append(test_accuracy)
@@ -133,7 +140,7 @@ for epoch in range(num_epochs):
     # 学習経過の表示
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {mean_loss:.4f}, Time: {elapsed_time:.2f} seconds')
     # 訓練データとテストデータのAccuracyを表示
-    print(f'Train Accuracy: {train_accuracy:.4f}, Test Accuracy: {test_avg_accuracy:.4f}')
+    print(f'Train Accuracy: {train_avg_accuracy:.4f}, Test Accuracy: {test_avg_accuracy:.4f}')
 
     # 学習率の減衰
     # scheduler.step()
@@ -153,24 +160,26 @@ plt.plot(losses, label='Training Loss')
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
-# plt.show()
 plt.savefig('./evaluation/TrainLoss.png')
+plt.show()
 
 # Train Accuracyをプロット
+plt.figure()
 plt.plot(train_accuracies, label='TrainAcc')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend()
-# plt.show()
 plt.savefig('./evaluation/TrainAcc.png')
+plt.show()
 
 # Test Accuracyをプロット
+plt.figure()
 plt.plot(test_accuracies, label='TestAcc')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend()
-# plt.show()
 plt.savefig('./evaluation/TestAcc.png')
+plt.show()
 
 with torch.no_grad():
     num_samples_batch = 1  # 表示する総サンプル数
