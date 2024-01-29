@@ -61,14 +61,14 @@ for epoch in range(num_epochs):
         h0 = rbm.sample_hidden(ph0)
 
         # Contrastive Divergenceのサンプリングステップ数
+        vk = v0  # 初期化
         for k in range(10):
-            vk = rbm.backward(h0)
-            pvk = rbm(vk)
-            hk = rbm.sample_hidden(pvk)
+            hk = rbm.sample_hidden(rbm(vk))
+            vk = rbm.backward(hk)
 
         rbm.zero_grad()
         positive_phase = torch.matmul(v0.t(), ph0)
-        negative_phase = torch.matmul(vk.t(), pvk)
+        negative_phase = torch.matmul(vk.t(), rbm(vk))
         loss = criterion(positive_phase - negative_phase, torch.zeros_like(positive_phase))
         loss.backward()
         optimizer.step()
