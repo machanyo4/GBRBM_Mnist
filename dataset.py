@@ -37,3 +37,23 @@ class ExtendedMNISTDatasetOnehot(torch.utils.data.Dataset):
         extended_data = torch.cat((data, one_hot_label))
 
         return extended_data
+
+class ExtendedMNISTDatasetZeros(torch.utils.data.Dataset):
+    def __init__(self, original_dataset):
+        self.original_dataset = original_dataset
+
+    def __len__(self):
+        return len(self.original_dataset)
+
+    def __getitem__(self, index):
+        data, label = self.original_dataset[index]
+
+        # 画像データを平滑化
+        data = data.view(-1)
+
+        # ラベルをZeroベクトルに変換
+        one_hot_label = torch.zeros(10)  # ラベルのクラス数に合わせて適切な次元数に変更
+        # 末尾にZeroベクトルを結合
+        extended_data = torch.cat((data, one_hot_label))
+
+        return extended_data

@@ -1,5 +1,5 @@
 from model import GBRBM
-from dataset import ExtendedMNISTDatasetOnehot
+from dataset import ExtendedMNISTDatasetOnehot, ExtendedMNISTDatasetZeros
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -24,14 +24,26 @@ transform = transforms.Compose([transforms.ToTensor()])
 train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
 test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=transform)
 
+# Validation の作成
+train_size = int(0.8 * len(train_dataset))
+train_val_size = len(train_dataset) - train_size
+test_size = int(0.8 * len(test_dataset))
+test_val_size = len(test_dataset) - test_size
+train_dataset, train_val_dataset = torch.utils.data.random_split(train_dataset, [train_size, train_val_size])
+test_dataset, test_val_dataset = torch.utils.data.random_split(test_dataset, [test_size, test_val_size])
+
 # 拡張データセットの作成
 train_dataset = ExtendedMNISTDatasetOnehot(train_dataset)
+train_val_dataset = ExtendedMNISTDatasetZeros(train_val_dataset)
 test_dataset = ExtendedMNISTDatasetOnehot(test_dataset)
+test_val_dataset = ExtendedMNISTDatasetZeros(test_val_dataset)
 
 # データローダーの作成
 batch_size = 512
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=True, drop_last=True)
+train_val_loader = torch.utils.data.DataLoader(dataset=train_val_dataset, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=True, drop_last=True)
 test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=True, drop_last=True)
+test_val_loader = torch.utils.data.DataLoader(dataset=test_val_dataset, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=True, drop_last=True)
 
 # 保存されたパラメータの読み込み
 # モデルの定義
@@ -75,12 +87,12 @@ optimizer = optim.SGD(rbm.parameters(), lr=0.01)
 
 # 学習
 losses = []
-num_epochs = 5
+num_epochs = 10
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # accuracyの値を格納するためのリスト
 train_accuracies = []
-test_accuracies = []
+val_accuracies = []
 
 for epoch in range(num_epochs):
     start_time = time.time()  # エポック開始時刻
@@ -120,18 +132,18 @@ for epoch in range(num_epochs):
     train_avg_accuracy = np.mean(train_epoch_accuracies)
     train_accuracies.append(train_avg_accuracy)
 
-    # テストデータの正確さを計算
-    test_epoch_accuracies = []
-    for data in tqdm(test_loader, desc=f'Testing Epoch {epoch+1}/{num_epochs}', leave=False):
+    # Validation の正確さを計算
+    val_epoch_accuracies = []
+    for data in tqdm(train_val_loader, desc=f'Testing Epoch {epoch+1}/{num_epochs}', leave=False):
         data = data.view(data.size(0), -1).to(device)
-        test_predictions = torch.argmax(rbm.backward(rbm(data))[:, 28*28:], dim=1)
+        val_predictions = torch.argmax(rbm.backward(rbm(data))[:, 28*28:], dim=1)
         test_ground_truth = torch.argmax(data[:, 28*28:], dim=1)
-        test_accuracy = accuracy_score(test_ground_truth.cpu().numpy(), test_predictions.cpu().numpy())
-        test_epoch_accuracies.append(test_accuracy)
+        val_accuracy = accuracy_score(test_ground_truth.cpu().numpy(), val_predictions.cpu().numpy())
+        val_epoch_accuracies.append(val_accuracy)
 
-    # テストデータの平均正確さを計算
-    test_avg_accuracy = np.mean(test_epoch_accuracies)
-    test_accuracies.append(test_avg_accuracy)
+    # Validation の平均正確さを計算
+    val_avg_accuracy = np.mean(val_epoch_accuracies)
+    val_accuracies.append(val_avg_accuracy)
 
     end_time = time.time()  # エポック終了時刻
     elapsed_time = end_time - start_time  # エポック実行時間
@@ -140,7 +152,7 @@ for epoch in range(num_epochs):
     # 学習経過の表示
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {mean_loss:.4f}, Time: {elapsed_time:.2f} seconds')
     # 訓練データとテストデータのAccuracyを表示
-    print(f'Train Accuracy: {train_avg_accuracy:.4f}, Test Accuracy: {test_avg_accuracy:.4f}')
+    print(f'Train Accuracy: {train_avg_accuracy:.4f}, Val Accuracy: {val_avg_accuracy:.4f}')
 
     # 学習率の減衰
     # scheduler.step()
@@ -163,22 +175,14 @@ plt.legend()
 plt.savefig('./evaluation/TrainLoss.png')
 plt.show()
 
-# Train Accuracyをプロット
+# Train Accuracy・Val Accuracyをプロット
 plt.figure()
 plt.plot(train_accuracies, label='TrainAcc')
+plt.plot(val_accuracies, label='ValAcc')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend()
-plt.savefig('./evaluation/TrainAcc.png')
-plt.show()
-
-# Test Accuracyをプロット
-plt.figure()
-plt.plot(test_accuracies, label='TestAcc')
-plt.xlabel('Epoch')
-plt.ylabel('Accuracy')
-plt.legend()
-plt.savefig('./evaluation/TestAcc.png')
+plt.savefig('./evaluation/Accuracy.png')
 plt.show()
 
 with torch.no_grad():
@@ -186,7 +190,7 @@ with torch.no_grad():
     num_samples_to_display = 10  # 表示する総サンプル数
     displayed_samples = 0
 
-    for i, data in enumerate(test_loader):
+    for i, data in enumerate(train_val_loader):
         if displayed_samples >= num_samples_batch:
             break
 
