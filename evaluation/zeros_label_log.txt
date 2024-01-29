@@ -1,0 +1,400 @@
+Epoch [1/200], Loss: 19.8975, Time: 6.10 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9180, Val Accuracy: 0.1633
+Epoch [2/200], Loss: 9.8087, Time: 4.93 seconds                                                                                                                                                                                  
+Train Accuracy: 0.9879, Val Accuracy: 0.1662
+Epoch [3/200], Loss: 9.3916, Time: 4.96 seconds                                                                                                                                                                                  
+Train Accuracy: 0.9932, Val Accuracy: 0.1659
+Epoch [4/200], Loss: 9.2213, Time: 5.14 seconds                                                                                                                                                                                  
+Train Accuracy: 0.9952, Val Accuracy: 0.1660
+Epoch [5/200], Loss: 9.1052, Time: 5.12 seconds                                                                                                                                                                                  
+Train Accuracy: 0.9964, Val Accuracy: 0.1650
+Epoch [6/200], Loss: 9.0696, Time: 5.11 seconds                                                                                                                                                                                  
+Train Accuracy: 0.9970, Val Accuracy: 0.1641
+Epoch [7/200], Loss: 9.0000, Time: 5.29 seconds                                                                                                                                                                                  
+Train Accuracy: 0.9975, Val Accuracy: 0.1623
+Epoch [8/200], Loss: 8.9516, Time: 5.20 seconds                                                                                                                                                                                  
+Train Accuracy: 0.9978, Val Accuracy: 0.1619
+Epoch [9/200], Loss: 8.9057, Time: 5.06 seconds                                                                                                                                                                                  
+Train Accuracy: 0.9981, Val Accuracy: 0.1618
+Epoch [10/200], Loss: 8.8870, Time: 5.13 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9983, Val Accuracy: 0.1624
+Epoch [11/200], Loss: 8.8427, Time: 4.99 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9984, Val Accuracy: 0.1624
+Epoch [12/200], Loss: 8.8023, Time: 5.11 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9985, Val Accuracy: 0.1610
+Epoch [13/200], Loss: 8.7931, Time: 5.01 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9986, Val Accuracy: 0.1618
+Epoch [14/200], Loss: 8.7553, Time: 5.05 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9988, Val Accuracy: 0.1607
+Epoch [15/200], Loss: 8.7319, Time: 5.04 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9989, Val Accuracy: 0.1608
+Epoch [16/200], Loss: 8.6986, Time: 5.04 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9990, Val Accuracy: 0.1613
+Epoch [17/200], Loss: 8.6898, Time: 5.08 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9991, Val Accuracy: 0.1613
+Epoch [18/200], Loss: 8.6405, Time: 5.07 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9991, Val Accuracy: 0.1618
+Epoch [19/200], Loss: 8.6217, Time: 4.96 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9992, Val Accuracy: 0.1623
+Epoch [20/200], Loss: 8.6259, Time: 5.17 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9992, Val Accuracy: 0.1619
+Epoch [21/200], Loss: 8.5863, Time: 5.08 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9993, Val Accuracy: 0.1624
+Epoch [22/200], Loss: 8.5856, Time: 5.15 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9993, Val Accuracy: 0.1626
+Epoch [23/200], Loss: 8.5337, Time: 5.01 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9993, Val Accuracy: 0.1637
+Epoch [24/200], Loss: 8.5035, Time: 4.96 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9994, Val Accuracy: 0.1631
+Epoch [25/200], Loss: 8.4988, Time: 4.97 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9994, Val Accuracy: 0.1630
+Epoch [26/200], Loss: 8.4919, Time: 5.02 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9994, Val Accuracy: 0.1635
+Epoch [27/200], Loss: 8.4475, Time: 5.10 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9994, Val Accuracy: 0.1623
+Epoch [28/200], Loss: 8.4405, Time: 4.96 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9994, Val Accuracy: 0.1617
+Epoch [29/200], Loss: 8.4127, Time: 5.01 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9995, Val Accuracy: 0.1626
+Epoch [30/200], Loss: 8.3968, Time: 5.09 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9995, Val Accuracy: 0.1621
+Epoch [31/200], Loss: 8.3777, Time: 4.98 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9995, Val Accuracy: 0.1613
+Epoch [32/200], Loss: 8.3236, Time: 4.90 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9995, Val Accuracy: 0.1624
+Epoch [33/200], Loss: 8.3477, Time: 5.19 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9995, Val Accuracy: 0.1624
+Epoch [34/200], Loss: 8.3140, Time: 5.19 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1626
+Epoch [35/200], Loss: 8.2815, Time: 4.99 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1622
+Epoch [36/200], Loss: 8.3058, Time: 4.99 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1633
+Epoch [37/200], Loss: 8.2708, Time: 5.00 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1628
+Epoch [38/200], Loss: 8.2391, Time: 4.95 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1629
+Epoch [39/200], Loss: 8.2192, Time: 5.15 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1619
+Epoch [40/200], Loss: 8.2338, Time: 5.04 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1613
+Epoch [41/200], Loss: 8.1514, Time: 4.95 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1614
+Epoch [42/200], Loss: 8.1895, Time: 4.92 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1614
+Epoch [43/200], Loss: 8.1520, Time: 4.96 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1609
+Epoch [44/200], Loss: 8.1288, Time: 5.01 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9996, Val Accuracy: 0.1617
+Epoch [45/200], Loss: 8.1103, Time: 5.00 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1604
+Epoch [46/200], Loss: 8.1111, Time: 5.05 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1609
+Epoch [47/200], Loss: 8.1086, Time: 5.03 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1609
+Epoch [48/200], Loss: 8.0531, Time: 4.98 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1610
+Epoch [49/200], Loss: 8.0564, Time: 4.98 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1623
+Epoch [50/200], Loss: 8.0419, Time: 5.06 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1616
+Epoch [51/200], Loss: 8.0201, Time: 5.04 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1609
+Epoch [52/200], Loss: 7.9978, Time: 5.15 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1602
+Epoch [53/200], Loss: 7.9832, Time: 5.02 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1617
+Epoch [54/200], Loss: 7.9888, Time: 4.94 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1606
+Epoch [55/200], Loss: 7.9622, Time: 5.04 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1601
+Epoch [56/200], Loss: 7.9375, Time: 4.95 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1600
+Epoch [57/200], Loss: 7.9492, Time: 5.22 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1597
+Epoch [58/200], Loss: 7.9204, Time: 4.98 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1597
+Epoch [59/200], Loss: 7.8962, Time: 5.00 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1591
+Epoch [60/200], Loss: 7.8902, Time: 5.10 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1591
+Epoch [61/200], Loss: 7.8554, Time: 5.08 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1584
+Epoch [62/200], Loss: 7.8728, Time: 5.17 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1585
+Epoch [63/200], Loss: 7.8402, Time: 4.95 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1579
+Epoch [64/200], Loss: 7.8427, Time: 4.98 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9997, Val Accuracy: 0.1585
+Epoch [65/200], Loss: 7.8106, Time: 5.03 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1596
+Epoch [66/200], Loss: 7.8110, Time: 5.20 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1588
+Epoch [67/200], Loss: 7.7793, Time: 5.13 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1584
+Epoch [68/200], Loss: 7.7826, Time: 5.01 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1586
+Epoch [69/200], Loss: 7.7342, Time: 5.11 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1591
+Epoch [70/200], Loss: 7.7655, Time: 5.00 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1587
+Epoch [71/200], Loss: 7.7302, Time: 5.03 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1586
+Epoch [72/200], Loss: 7.7023, Time: 4.93 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1587
+Epoch [73/200], Loss: 7.7151, Time: 5.05 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1592
+Epoch [74/200], Loss: 7.7076, Time: 5.06 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1593
+Epoch [75/200], Loss: 7.6847, Time: 4.99 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1599
+Epoch [76/200], Loss: 7.6877, Time: 4.91 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1602
+Epoch [77/200], Loss: 7.6700, Time: 4.96 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1604
+Epoch [78/200], Loss: 7.6663, Time: 4.99 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1613
+Epoch [79/200], Loss: 7.6354, Time: 5.04 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1610
+Epoch [80/200], Loss: 7.6363, Time: 5.12 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1613
+Epoch [81/200], Loss: 7.6054, Time: 4.98 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1619
+Epoch [82/200], Loss: 7.5998, Time: 5.06 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1614
+Epoch [83/200], Loss: 7.5778, Time: 5.11 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1614
+Epoch [84/200], Loss: 7.5579, Time: 4.93 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1608
+Epoch [85/200], Loss: 7.5583, Time: 5.06 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1599
+Epoch [86/200], Loss: 7.5517, Time: 5.00 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1599
+Epoch [87/200], Loss: 7.5498, Time: 4.93 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1590
+Epoch [88/200], Loss: 7.5478, Time: 5.00 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9998, Val Accuracy: 0.1596
+Epoch [89/200], Loss: 7.5118, Time: 5.15 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1595
+Epoch [90/200], Loss: 7.4860, Time: 5.10 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1604
+Epoch [91/200], Loss: 7.5044, Time: 4.95 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1605
+Epoch [92/200], Loss: 7.4736, Time: 5.29 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1601
+Epoch [93/200], Loss: 7.4579, Time: 5.04 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1609
+Epoch [94/200], Loss: 7.4500, Time: 4.96 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1596
+Epoch [95/200], Loss: 7.4569, Time: 5.08 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1604
+Epoch [96/200], Loss: 7.4447, Time: 4.96 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1596
+Epoch [97/200], Loss: 7.4231, Time: 5.04 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1596
+Epoch [98/200], Loss: 7.3976, Time: 4.98 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1594
+Epoch [99/200], Loss: 7.3816, Time: 5.15 seconds                                                                                                                                                                                 
+Train Accuracy: 0.9999, Val Accuracy: 0.1591
+Epoch [100/200], Loss: 7.4243, Time: 4.97 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1594
+Epoch [101/200], Loss: 7.3709, Time: 4.92 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1599
+Epoch [102/200], Loss: 7.3788, Time: 4.98 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1601
+Epoch [103/200], Loss: 7.3561, Time: 4.97 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1596
+Epoch [104/200], Loss: 7.3495, Time: 4.95 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1598
+Epoch [105/200], Loss: 7.3398, Time: 4.99 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1597
+Epoch [106/200], Loss: 7.3397, Time: 5.04 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1591
+Epoch [107/200], Loss: 7.3005, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1596
+Epoch [108/200], Loss: 7.3006, Time: 4.96 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1599
+Epoch [109/200], Loss: 7.3162, Time: 4.93 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1589
+Epoch [110/200], Loss: 7.2987, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1597
+Epoch [111/200], Loss: 7.2580, Time: 5.15 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1580
+Epoch [112/200], Loss: 7.2619, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1592
+Epoch [113/200], Loss: 7.2429, Time: 5.06 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1599
+Epoch [114/200], Loss: 7.2507, Time: 5.21 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1585
+Epoch [115/200], Loss: 7.2396, Time: 4.98 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1583
+Epoch [116/200], Loss: 7.2319, Time: 5.15 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1573
+Epoch [117/200], Loss: 7.2234, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1575
+Epoch [118/200], Loss: 7.2045, Time: 4.97 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1582
+Epoch [119/200], Loss: 7.1968, Time: 5.15 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1574
+Epoch [120/200], Loss: 7.1997, Time: 4.92 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1574
+Epoch [121/200], Loss: 7.1869, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1574
+Epoch [122/200], Loss: 7.1795, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1582
+Epoch [123/200], Loss: 7.1552, Time: 5.13 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1587
+Epoch [124/200], Loss: 7.1397, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1584
+Epoch [125/200], Loss: 7.1412, Time: 5.05 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1581
+Epoch [126/200], Loss: 7.1273, Time: 5.18 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1579
+Epoch [127/200], Loss: 7.1111, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1584
+Epoch [128/200], Loss: 7.1116, Time: 4.96 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1582
+Epoch [129/200], Loss: 7.1176, Time: 4.95 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1580
+Epoch [130/200], Loss: 7.1120, Time: 4.96 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1592
+Epoch [131/200], Loss: 7.0931, Time: 4.92 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1579
+Epoch [132/200], Loss: 7.0920, Time: 5.14 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1585
+Epoch [133/200], Loss: 7.0746, Time: 4.99 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1581
+Epoch [134/200], Loss: 7.0906, Time: 4.98 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1579
+Epoch [135/200], Loss: 7.0740, Time: 4.93 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1585
+Epoch [136/200], Loss: 7.0689, Time: 4.99 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1588
+Epoch [137/200], Loss: 7.0350, Time: 4.97 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1572
+Epoch [138/200], Loss: 7.0431, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1590
+Epoch [139/200], Loss: 7.0310, Time: 4.96 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1580
+Epoch [140/200], Loss: 7.0171, Time: 4.93 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1576
+Epoch [141/200], Loss: 7.0022, Time: 5.06 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1582
+Epoch [142/200], Loss: 6.9943, Time: 4.96 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1584
+Epoch [143/200], Loss: 7.0095, Time: 4.97 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1581
+Epoch [144/200], Loss: 6.9664, Time: 4.94 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1589
+Epoch [145/200], Loss: 6.9855, Time: 4.94 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1585
+Epoch [146/200], Loss: 6.9939, Time: 5.06 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1592
+Epoch [147/200], Loss: 6.9807, Time: 4.92 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1581
+Epoch [148/200], Loss: 6.9505, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1585
+Epoch [149/200], Loss: 6.9475, Time: 5.05 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1585
+Epoch [150/200], Loss: 6.9514, Time: 4.94 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1575
+Epoch [151/200], Loss: 6.9453, Time: 5.05 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1587
+Epoch [152/200], Loss: 6.9202, Time: 5.13 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1591
+Epoch [153/200], Loss: 6.9165, Time: 4.97 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1586
+Epoch [154/200], Loss: 6.9368, Time: 5.04 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1587
+Epoch [155/200], Loss: 6.9123, Time: 5.06 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1594
+Epoch [156/200], Loss: 6.8965, Time: 5.12 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1582
+Epoch [157/200], Loss: 6.9046, Time: 5.20 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1596
+Epoch [158/200], Loss: 6.8952, Time: 5.04 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1586
+Epoch [159/200], Loss: 6.8679, Time: 4.95 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1588
+Epoch [160/200], Loss: 6.8566, Time: 5.02 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1581
+Epoch [161/200], Loss: 6.8610, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1591
+Epoch [162/200], Loss: 6.8566, Time: 5.07 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1581
+Epoch [163/200], Loss: 6.8444, Time: 5.03 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1592
+Epoch [164/200], Loss: 6.8450, Time: 4.99 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1587
+Epoch [165/200], Loss: 6.8272, Time: 5.07 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1586
+Epoch [166/200], Loss: 6.8214, Time: 4.97 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1587
+Epoch [167/200], Loss: 6.8208, Time: 5.04 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1587
+Epoch [168/200], Loss: 6.8231, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1585
+Epoch [169/200], Loss: 6.7998, Time: 4.91 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1582
+Epoch [170/200], Loss: 6.8068, Time: 4.98 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1582
+Epoch [171/200], Loss: 6.7891, Time: 5.05 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1581
+Epoch [172/200], Loss: 6.7827, Time: 5.05 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1585
+Epoch [173/200], Loss: 6.7828, Time: 5.09 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1590
+Epoch [174/200], Loss: 6.7524, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1593
+Epoch [175/200], Loss: 6.7714, Time: 5.04 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1590
+Epoch [176/200], Loss: 6.7601, Time: 4.95 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1588
+Epoch [177/200], Loss: 6.7423, Time: 5.04 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1582
+Epoch [178/200], Loss: 6.7657, Time: 5.02 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1591
+Epoch [179/200], Loss: 6.7295, Time: 5.08 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1589
+Epoch [180/200], Loss: 6.7340, Time: 5.21 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1589
+Epoch [181/200], Loss: 6.7265, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1592
+Epoch [182/200], Loss: 6.7178, Time: 5.07 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1581
+Epoch [183/200], Loss: 6.7342, Time: 5.02 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1579
+Epoch [184/200], Loss: 6.6985, Time: 5.04 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1576
+Epoch [185/200], Loss: 6.6936, Time: 5.12 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1597
+Epoch [186/200], Loss: 6.6997, Time: 5.03 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1575
+Epoch [187/200], Loss: 6.7165, Time: 5.20 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1573
+Epoch [188/200], Loss: 6.6819, Time: 5.06 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1561
+Epoch [189/200], Loss: 6.6846, Time: 4.92 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1573
+Epoch [190/200], Loss: 6.6907, Time: 5.03 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1557
+Epoch [191/200], Loss: 6.6792, Time: 4.95 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1560
+Epoch [192/200], Loss: 6.6512, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1566
+Epoch [193/200], Loss: 6.6623, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1560
+Epoch [194/200], Loss: 6.6584, Time: 5.02 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1569
+Epoch [195/200], Loss: 6.6485, Time: 5.23 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1568
+Epoch [196/200], Loss: 6.6492, Time: 5.01 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1560
+Epoch [197/200], Loss: 6.6392, Time: 5.00 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1570
+Epoch [198/200], Loss: 6.6433, Time: 5.04 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1573
+Epoch [199/200], Loss: 6.6290, Time: 5.08 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1574
+Epoch [200/200], Loss: 6.6130, Time: 4.90 seconds                                                                                                                                                                                
+Train Accuracy: 0.9999, Val Accuracy: 0.1570

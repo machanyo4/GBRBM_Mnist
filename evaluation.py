@@ -1,5 +1,5 @@
 from model import GBRBM
-from dataset import ExtendedMNISTDatasetOnehot, ExtendedMNISTDatasetZeros
+from dataset import ExtendedMNISTDatasetOnehot, ExtendedMNISTDatasetZeros, k_sampling
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -12,6 +12,10 @@ import time
 from torch.optim.lr_scheduler import StepLR
 import os
 from sklearn.metrics import accuracy_score
+
+# Seed の固定
+generator = torch.Generator()
+generator.manual_seed(0)
 
 # GPUが利用可能か確認
 print("GPU available : ", torch.cuda.is_available())
@@ -29,12 +33,12 @@ train_size = int(0.8 * len(train_dataset))
 train_val_size = len(train_dataset) - train_size
 test_size = int(0.8 * len(test_dataset))
 test_val_size = len(test_dataset) - test_size
-train_dataset, train_val_dataset = torch.utils.data.random_split(train_dataset, [train_size, train_val_size])
-test_dataset, test_val_dataset = torch.utils.data.random_split(test_dataset, [test_size, test_val_size])
+train_dataset, train_val_dataset = torch.utils.data.random_split(train_dataset, [train_size, train_val_size], generator=generator)
+test_dataset, test_val_dataset = torch.utils.data.random_split(test_dataset, [test_size, test_val_size], generator=generator)
 
 # 拡張データセットの作成
 train_dataset = ExtendedMNISTDatasetOnehot(train_dataset)
-train_val_dataset = ExtendedMNISTDatasetZeros(train_val_dataset)
+train_val_dataset = ExtendedMNISTDatasetOnehot(train_val_dataset)
 test_dataset = ExtendedMNISTDatasetOnehot(test_dataset)
 test_val_dataset = ExtendedMNISTDatasetZeros(test_val_dataset)
 
@@ -87,13 +91,13 @@ optimizer = optim.SGD(rbm.parameters(), lr=0.01)
 
 # 学習
 losses = []
-num_epochs = 10
+num_epochs = 200
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # accuracyの値を格納するためのリスト
 train_accuracies = []
 val_accuracies = []
-
+rbm.train()
 for epoch in range(num_epochs):
     start_time = time.time()  # エポック開始時刻
     epoch_losses = []
@@ -101,6 +105,7 @@ for epoch in range(num_epochs):
     # tqdm を使用してプログレスバー表示
     train_epoch_accuracies = []
     for data in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}', leave=False):
+        rbm.train()
         data = data.view(data.size(0), -1).to(device)  # データの平滑化
         v0 = data
         ph0 = rbm(v0)
@@ -133,12 +138,20 @@ for epoch in range(num_epochs):
     train_accuracies.append(train_avg_accuracy)
 
     # Validation の正確さを計算
+    rbm.eval()
     val_epoch_accuracies = []
+    # zeors label の作成
+    zeros_label = torch.zeros(batch_size, 10).to(device)
+    # rand label の作成
+    rand_label = torch.randn(batch_size, 10).to(device)
+
     for data in tqdm(train_val_loader, desc=f'Testing Epoch {epoch+1}/{num_epochs}', leave=False):
-        data = data.view(data.size(0), -1).to(device)
-        val_predictions = torch.argmax(rbm.backward(rbm(data))[:, 28*28:], dim=1)
-        test_ground_truth = torch.argmax(data[:, 28*28:], dim=1)
-        val_accuracy = accuracy_score(test_ground_truth.cpu().numpy(), val_predictions.cpu().numpy())
+        bind_data = data.view(data.size(0), -1).to(device)
+        img_data = bind_data[:, :28*28]
+        rand_data = torch.cat((img_data, rand_label), dim=1)
+        val_predictions = torch.argmax(k_sampling(10, rbm, rand_data)[:, 28*28:], dim=1)
+        val_ground_truth = torch.argmax(bind_data[:, 28*28:], dim=1)
+        val_accuracy = accuracy_score(val_ground_truth.cpu().numpy(), val_predictions.cpu().numpy())
         val_epoch_accuracies.append(val_accuracy)
 
     # Validation の平均正確さを計算

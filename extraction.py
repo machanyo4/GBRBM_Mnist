@@ -47,7 +47,7 @@ optimizer = optim.SGD(rbm.parameters(), lr=0.01)
 
 # 学習
 losses = []
-num_epochs = 10
+num_epochs = 100
 
 for epoch in range(num_epochs):
     start_time = time.time()  # エポック開始時刻
