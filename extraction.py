@@ -47,7 +47,7 @@ optimizer = optim.SGD(rbm.parameters(), lr=0.01)
 
 # 学習
 losses = []
-num_epochs = 100
+num_epochs = 300
 
 for epoch in range(num_epochs):
     start_time = time.time()  # エポック開始時刻
@@ -86,7 +86,6 @@ for epoch in range(num_epochs):
 
 # フォルダを作成
 os.makedirs('extraction', exist_ok=True)
-os.makedirs('extraction/original_images', exist_ok=True)
 os.makedirs('extraction/reconstructed_images', exist_ok=True)
 
 # モデルの保存
@@ -130,14 +129,12 @@ with torch.no_grad():
             reconstructed_image = reconstructed_data[j].cpu().numpy()
 
             # ファイルに保存
-            original_path = f'./extraction/original_images/original_{displayed_samples + 1}.png'
             reconstructed_path = f'./extraction/reconstructed_images/reconstructed_{displayed_samples + 1}.png'
             
             plt.figure(figsize=(8, 4))
             plt.subplot(1, 2, 1)
             plt.imshow(original_image, cmap='gray')
             plt.title('Original Image')
-            plt.savefig(original_path)
             
             plt.subplot(1, 2, 2)
             plt.imshow(reconstructed_image, cmap='gray')

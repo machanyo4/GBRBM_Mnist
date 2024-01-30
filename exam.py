@@ -93,10 +93,11 @@ data = next(iter(train_val_loader))
 bind_data = data.view(data.size(0), -1).to(device)
 img_data = bind_data[:, :28*28]
 zeros_data = torch.cat((img_data, rand_label), dim=1)
-predict_label = k_sampling(10, rbm, zeros_data)[:, 28*28:]
+predict_label = k_sampling(100, rbm, zeros_data)[:, 28*28:]
 correct_label = bind_data[:, 28*28:]
 # print(predict_label.cpu().detach().numpy())
 for i in range(batch_size):
     print('correct', correct_label.cpu().numpy()[i])
+    print('randm ', np.round((rand_label.cpu().numpy()[1]), decimals=2))
     print('pred   ', np.round(predict_label.cpu().detach().numpy()[i]))
     print('-----------------------------------------')

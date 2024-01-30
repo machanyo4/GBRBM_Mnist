@@ -91,7 +91,7 @@ optimizer = optim.SGD(rbm.parameters(), lr=0.01)
 
 # 学習
 losses = []
-num_epochs = 200
+num_epochs = 1000
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # accuracyの値を格納するためのリスト
@@ -111,15 +111,15 @@ for epoch in range(num_epochs):
         ph0 = rbm(v0)
         h0 = rbm.sample_hidden(ph0)
 
-        # Contrastive Divergenceのサンプリングステップ数
+                # Contrastive Divergenceのサンプリングステップ数
+        vk = v0  # 初期化
         for k in range(10):
-            vk = rbm.backward(h0)
-            pvk = rbm(vk)
-            hk = rbm.sample_hidden(pvk)
+            hk = rbm.sample_hidden(rbm(vk))
+            vk = rbm.backward(hk)
 
         rbm.zero_grad()
         positive_phase = torch.matmul(v0.t(), ph0)
-        negative_phase = torch.matmul(vk.t(), pvk)
+        negative_phase = torch.matmul(vk.t(), rbm(vk))
         loss = criterion(positive_phase - negative_phase, torch.zeros_like(positive_phase))
         # トレーニングデータのaccを計算
         train_predictions = torch.argmax(rbm.backward(rbm(data))[:, 28*28:], dim=1)  # 後半の10要素を取得
@@ -149,7 +149,7 @@ for epoch in range(num_epochs):
         bind_data = data.view(data.size(0), -1).to(device)
         img_data = bind_data[:, :28*28]
         rand_data = torch.cat((img_data, rand_label), dim=1)
-        val_predictions = torch.argmax(k_sampling(10, rbm, rand_data)[:, 28*28:], dim=1)
+        val_predictions = torch.argmax(k_sampling(100, rbm, rand_data)[:, 28*28:], dim=1)
         val_ground_truth = torch.argmax(bind_data[:, 28*28:], dim=1)
         val_accuracy = accuracy_score(val_ground_truth.cpu().numpy(), val_predictions.cpu().numpy())
         val_epoch_accuracies.append(val_accuracy)
@@ -172,7 +172,6 @@ for epoch in range(num_epochs):
 
 # フォルダを作成
 os.makedirs('evaluation', exist_ok=True)
-os.makedirs('evaluation/original_images', exist_ok=True)
 os.makedirs('evaluation/reconstructed_images', exist_ok=True)
 
 # モデルの保存
@@ -225,14 +224,12 @@ with torch.no_grad():
             reconstructed_image = reconstructed_data[j].cpu().numpy()
 
             # ファイルのPATH
-            original_path = f'./evaluation/original_images/original_{displayed_samples + 1}.png'
             reconstructed_path = f'./evaluation/reconstructed_images/reconstructed_{displayed_samples + 1}.png'
             
             plt.figure(figsize=(8, 4))
             plt.subplot(1, 2, 1)
             plt.imshow(original_image, cmap='gray')
             plt.title('Original Image')
-            plt.savefig(original_path)
             
             plt.subplot(1, 2, 2)
             plt.imshow(reconstructed_image, cmap='gray')
