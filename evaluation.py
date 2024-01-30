@@ -91,12 +91,13 @@ optimizer = optim.SGD(rbm.parameters(), lr=0.01)
 
 # 学習
 losses = []
-num_epochs = 1000
+num_epochs = 10
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # accuracyの値を格納するためのリスト
 train_accuracies = []
-val_accuracies = []
+zeros_val_accuracies = []
+rand_val_accuracies = []
 rbm.train()
 for epoch in range(num_epochs):
     start_time = time.time()  # エポック開始時刻
@@ -139,7 +140,8 @@ for epoch in range(num_epochs):
 
     # Validation の正確さを計算
     rbm.eval()
-    val_epoch_accuracies = []
+    zeros_val_epoch_accuracies = []
+    rand_val_epoch_accuracies = []
     # zeors label の作成
     zeros_label = torch.zeros(batch_size, 10).to(device)
     # rand label の作成
@@ -148,15 +150,21 @@ for epoch in range(num_epochs):
     for data in tqdm(train_val_loader, desc=f'Testing Epoch {epoch+1}/{num_epochs}', leave=False):
         bind_data = data.view(data.size(0), -1).to(device)
         img_data = bind_data[:, :28*28]
+        zeros_data = torch.cat((img_data, zeros_label), dim=1)
         rand_data = torch.cat((img_data, rand_label), dim=1)
-        val_predictions = torch.argmax(k_sampling(100, rbm, rand_data)[:, 28*28:], dim=1)
+        zeros_val_predictions = torch.argmax(k_sampling(10, rbm, zeros_data)[:, 28*28:], dim=1)
+        rand_val_predictions = torch.argmax(k_sampling(10, rbm, rand_data)[:, 28*28:], dim=1)
         val_ground_truth = torch.argmax(bind_data[:, 28*28:], dim=1)
-        val_accuracy = accuracy_score(val_ground_truth.cpu().numpy(), val_predictions.cpu().numpy())
-        val_epoch_accuracies.append(val_accuracy)
+        zeros_val_accuracy = accuracy_score(val_ground_truth.cpu().numpy(), zeros_val_predictions.cpu().numpy())
+        rand_val_accuracy = accuracy_score(val_ground_truth.cpu().numpy(), rand_val_predictions.cpu().numpy())
+        zeros_val_epoch_accuracies.append(zeros_val_accuracy)
+        rand_val_epoch_accuracies.append(rand_val_accuracy)
 
     # Validation の平均正確さを計算
-    val_avg_accuracy = np.mean(val_epoch_accuracies)
-    val_accuracies.append(val_avg_accuracy)
+    zeros_val_avg_accuracy = np.mean(zeros_val_epoch_accuracies)
+    zeros_val_accuracies.append(zeros_val_avg_accuracy)
+    rand_val_avg_accuracy = np.mean(rand_val_epoch_accuracies)
+    rand_val_accuracies.append(rand_val_avg_accuracy)
 
     end_time = time.time()  # エポック終了時刻
     elapsed_time = end_time - start_time  # エポック実行時間
@@ -164,8 +172,8 @@ for epoch in range(num_epochs):
     losses.append(mean_loss)
     # 学習経過の表示
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {mean_loss:.4f}, Time: {elapsed_time:.2f} seconds')
-    # 訓練データとテストデータのAccuracyを表示
-    print(f'Train Accuracy: {train_avg_accuracy:.4f}, Val Accuracy: {val_avg_accuracy:.4f}')
+    # 訓練データとValidationのAccuracyを表示
+    print(f'Train Accuracy: {train_avg_accuracy:.4f}, Zeros Val Accuracy: {zeros_val_avg_accuracy:.4f}, Rand Val Accuracy: {rand_val_avg_accuracy:.4f}')
 
     # 学習率の減衰
     # scheduler.step()
@@ -190,7 +198,8 @@ plt.show()
 # Train Accuracy・Val Accuracyをプロット
 plt.figure()
 plt.plot(train_accuracies, label='TrainAcc')
-plt.plot(val_accuracies, label='ValAcc')
+plt.plot(rand_val_accuracies, label='ZerosValAcc')
+plt.plot(rand_val_accuracies, label='RandValAcc')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend()
