@@ -1,5 +1,5 @@
 from model import GBRBM
-from dataset import OnlyMNISTImgDataset
+from dataset import OnlyMNISTImgDataset, k_sampling
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -62,7 +62,7 @@ for epoch in range(num_epochs):
 
         # Contrastive Divergenceのサンプリングステップ数
         vk = v0  # 初期化
-        for k in range(10):
+        for k in range(1):
             hk = rbm.sample_hidden(rbm(vk))
             vk = rbm.backward(hk)
 
@@ -116,7 +116,7 @@ with torch.no_grad():
 
         # データも明示的にデバイスに移動させる
         data = data.view(data.size(0), -1).to(device)
-        reconstructed_data = rbm.backward(rbm(data))
+        reconstructed_data = k_sampling(10, rbm, data)
         reconstructed_data = reconstructed_data
         reconstructed_data = reconstructed_data.view(data.size(0), 28, 28)
 

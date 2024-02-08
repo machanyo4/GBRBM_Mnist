@@ -91,7 +91,7 @@ optimizer = optim.SGD(rbm.parameters(), lr=0.01)
 
 # 学習
 losses = []
-num_epochs = 10
+num_epochs = 300
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # accuracyの値を格納するためのリスト
@@ -114,7 +114,7 @@ for epoch in range(num_epochs):
 
                 # Contrastive Divergenceのサンプリングステップ数
         vk = v0  # 初期化
-        for k in range(10):
+        for k in range(1):
             hk = rbm.sample_hidden(rbm(vk))
             vk = rbm.backward(hk)
 
@@ -198,7 +198,7 @@ plt.show()
 # Train Accuracy・Val Accuracyをプロット
 plt.figure()
 plt.plot(train_accuracies, label='TrainAcc')
-plt.plot(rand_val_accuracies, label='ZerosValAcc')
+plt.plot(zeros_val_accuracies, label='ZerosValAcc')
 plt.plot(rand_val_accuracies, label='RandValAcc')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
@@ -220,7 +220,7 @@ with torch.no_grad():
 
         # データも明示的にデバイスに移動させる
         data = data.view(data.size(0), -1).to(device)
-        reconstructed_data = rbm.backward(rbm(data))
+        reconstructed_data = k_sampling(10, rbm, data)
         reconstructed_data = reconstructed_data[:, :28*28]
         reconstructed_data = reconstructed_data.view(data.size(0), 28, 28)
 
